@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Хазиахметов</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+    <div>
+        <img src="dliazadania29.3.jpg" id="pole" style="width: 1500px; height: 710px; z-index: 1; position: absolute" onclick="DATA2()" />
+        <img src="dliazadania9.3.png" id="miach" style="width: 100px; height: 100px; border-radius: 50%; z-index: 2; position: absolute; background-color: white; transition: 1.5s" />
+    </div>
+    <script>
+        var miach = document.getElementById("miach");
+        var pole = document.getElementById("pole");
+
+        miach.style.left = 708 + 'px';
+        miach.style.top = 308 + 'px';
+        function DATA2(event) {
+            document.querySelector('#pole').onclick = function (event) {
+                var startX = miach.getBoundingClientRect().x;
+                var startY = miach.getBoundingClientRect().y;
+                console.log(Math.round(startX), Math.round(startY));
+               
+                var x = event.offsetX;
+                var y = event.offsetY;
+                var endX = x;
+                var endy = y;
+
+                if (endX < 50) {
+                    endX = 50;
+                } else if (endX > 1450) {
+                    endX = 1350;
+                }
+
+                if (endy < 50) {
+                    endy = 25;
+                }else if (endy > 600) {
+                    endy = 600;
+                }
+
+                miach.style.left = endX + 'px';
+                miach.style.top = endy + 'px';
+
+            }
+        }
+    </script>
+</body>
+</html>

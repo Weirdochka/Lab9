@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Хазиахметов</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+    <input id="knopka" type="button" value="Нажми на меня!" style=" width:150px;height:50px;margin-left:600px;margin-top:355px" onmousemove="DATA()" />
+
+    <script>
+        function DATA() {
+            document.getElementById('knopka').style.visibility = 'hidden';
+            DATA2();
+            var Time = setTimeout(DATA3, 3000);
+        }
+        function DATA2() {
+            var btid = document.getElementById('knopka');
+            var left = Math.floor(Math.random() * (1500 - 0) + 0);
+            var top = Math.floor(Math.random() * (710 - 0) + 0);
+            btid.style.marginLeft = left + 'px';
+            btid.style.marginTop = top + 'px';
+            console.log(left);
+            console.log(top);
+        }
+        function DATA3() {
+            document.getElementById('knopka').style.visibility = 'visible';
+        }
+    </script>
+</body>
+</html>
